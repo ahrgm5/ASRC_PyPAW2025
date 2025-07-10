@@ -12,6 +12,8 @@ class LinearStage():
         self._controller = None
         self.device = None
         self.current_position = None
+        self.min = 0.0
+        self.max = 28
 
 
     def find_devices(self):
@@ -38,7 +40,10 @@ class LinearStage():
 
     def move(self, pos):
         sys.stdout = open(os.devnull, 'w')
-        position = self.device.set_distance(pos)
+        if pos >= max & pos <= min :
+            position = self.device.set_distance(pos)
+        else:
+            print("Position is out of range")
         sys.stdout = sys.__stdout__
         self.current_position = position
         return position
@@ -48,11 +53,18 @@ class LinearStage():
         return self.device.get_distance()
 
 
+    def on_closing(self):
+
+        self.device.close_connection()
+
+
+
     def jog_and_measure(self, start=0, end=60, step=1, function=None, time_wait=1):
 
         if not function:
             print("Need funcion")
             return 1
+
 
         position, measure = [], []
         
@@ -67,14 +79,14 @@ class LinearStage():
 
 
 
+if __name__ == "__main__":
+    ls = LinearStage()
+    lls = ls.find_devices()
+    info = ls.connect(lls[0])
+    print(info)
+    ls.home()
+    ls.jog_and_measure(step = 5, function=time.time, time_wait=0)
+    ls.move(14)
 
-# if __name__ == "__main__":
-
-#     ls = LinearStage()
-#     lls = ls.find_devices()
-#     info = ls.connect(lls[0])
-#     print(info)
-
-#     ls.home()
-#     ls.jog_and_measure(step = 5, function=time.time, time_wait=0)
-#     ls.move(14)
+    pos = ls.check_position()
+    print(pos)
