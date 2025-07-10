@@ -22,7 +22,7 @@ class StageWidget(QWidget):
         
         # create a stage object
         self.stage = Stage()
-        self.step_size = 2.5
+        #self.step_size = 2.5
         
         # just get the Qt out of it
         super().__init__()
@@ -34,16 +34,11 @@ class StageWidget(QWidget):
         self.stage.find_devices()
         for stage in self.stage.ports:
             self.Stage_List.addItem(stage)
-            
-        
-    
-
-        
-        
+ 
         # Validation of Double input type for the Step_Size variable in GUI
         self.step_size = 0.5
         self.Step_Size_input.setText(str(self.step_size))
-        validator1 = QDoubleValidator(0.0, 100.0, 2, self)
+        validator1 = QDoubleValidator(0.0, 28.0, 4, self)
         self.Step_Size_input.setValidator(validator1)
         state1 = validator1.validate(self.Step_Size_input.text(), 0)[0]
 
@@ -53,25 +48,20 @@ class StageWidget(QWidget):
         # Validation of Double input type for the Move_To variable in GUI
         self.setpoint = 0.0
         self.Move_To_input.setText(str(self.setpoint))   
-        validator2 = QDoubleValidator(0.0, 14, 2, self)
+        validator2 = QDoubleValidator(self.stage.min, self.stage.max, 4, self)
         self.Move_To_input.setValidator(validator2)
         state2 = validator2.validate(self.Move_To_input.text(), 0)[0]
 
         if  state2 == QValidator.Acceptable:
             self.setpoint = float(self.Move_To_input.text())
        
-
-
-        self.Go_button.clicked.connect(self.move_stage)
+       # Connecting all GUI buttons to stage functions implemented below
+        self.Go_button.clicked.connect(self.move_to)
         self.Home_button.clicked.connect(self.move_home)
         self.Forward_button.clicked.connect(self.move_forward)
         self.Connect_button.clicked.connect(self.connect_stage)
         self.Backward_button.clicked.connect(self.move_backward)
         
-    def connect_stage(self):
-        self.stage.connect(self.Stage_List.currentText())
-        self.Current_Position.setText(str(self.stage.check_position))
-
 
     def move_stage(self):
         self.stage.move(self.setpoint)
@@ -79,16 +69,26 @@ class StageWidget(QWidget):
         self.Current_Position.setText(str(x))
 
 
-    def move_home(self):
-        self.setpoint = 14.0
+    def move_to(self, setpoint):
+        self.setpoint = float(self.Move_To_input.text())
         self.stage.move(self.setpoint)
         self.Current_Position.setText(str(self.setpoint))
+
+
+    def move_home(self):
+        self.stage.move(14)
+        self.Current_Position.setText(str(14))
    
 
     def move_forward(self):
         pos = self.stage.check_position() + self.step_size
         self.stage.move(pos)
         self.Current_Position.setText(str(pos))
+
+
+    def connect_stage(self):
+        self.stage.connect(self.Stage_List.currentText())
+        self.Current_Position.setText(str(self.stage.check_position))
 
 
     def move_backward(self): 

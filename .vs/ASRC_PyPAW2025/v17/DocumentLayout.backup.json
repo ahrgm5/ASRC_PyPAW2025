@@ -3,8 +3,12 @@
   "WorkspaceRootPath": "C:\\Users\\Aron Rezene\\Desktop\\ASRC_PyPAW2025\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{ECFA2397-6373-43AB-92F1-D6AA08E6F53A}|PythonApplication\\PythonApplication.pyproj|C:\\Users\\Aron Rezene\\Desktop\\ASRC_PyPAW2025\\PythonApplication\\PythonApplication.py||{8B382828-6202-11D1-8870-0000F87579D2}",
-      "RelativeMoniker": "D:0:0:{ECFA2397-6373-43AB-92F1-D6AA08E6F53A}|PythonApplication\\PythonApplication.pyproj|solutionrelative:PythonApplication\\PythonApplication.py||{8B382828-6202-11D1-8870-0000F87579D2}"
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\Aron Rezene\\Desktop\\ASRC_PyPAW2025\\my_Linear.py||{8B382828-6202-11D1-8870-0000F87579D2}|",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:my_Linear.py||{8B382828-6202-11D1-8870-0000F87579D2}|"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\Aron Rezene\\Desktop\\ASRC_PyPAW2025\\example_working_stage_ui_draft.py||{8B382828-6202-11D1-8870-0000F87579D2}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:example_working_stage_ui_draft.py||{8B382828-6202-11D1-8870-0000F87579D2}"
     }
   ],
   "DocumentGroupContainers": [
@@ -23,14 +27,27 @@
             {
               "$type": "Document",
               "DocumentIndex": 0,
-              "Title": "PythonApplication.py",
-              "DocumentMoniker": "C:\\Users\\Aron Rezene\\Desktop\\ASRC_PyPAW2025\\PythonApplication\\PythonApplication.py",
-              "RelativeDocumentMoniker": "PythonApplication\\PythonApplication.py",
-              "ToolTip": "C:\\Users\\Aron Rezene\\Desktop\\ASRC_PyPAW2025\\PythonApplication\\PythonApplication.py",
-              "RelativeToolTip": "PythonApplication\\PythonApplication.py",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Title": "my_Linear.py",
+              "DocumentMoniker": "C:\\Users\\Aron Rezene\\Desktop\\ASRC_PyPAW2025\\my_Linear.py",
+              "RelativeDocumentMoniker": "my_Linear.py",
+              "ToolTip": "C:\\Users\\Aron Rezene\\Desktop\\ASRC_PyPAW2025\\my_Linear.py",
+              "RelativeToolTip": "my_Linear.py",
+              "ViewState": "AgIAAAMAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001001|",
-              "WhenOpened": "2025-07-09T06:00:59.213Z",
+              "WhenOpened": "2025-07-10T06:27:14.368Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "example_working_stage_ui_draft.py",
+              "DocumentMoniker": "C:\\Users\\Aron Rezene\\Desktop\\ASRC_PyPAW2025\\example_working_stage_ui_draft.py",
+              "RelativeDocumentMoniker": "example_working_stage_ui_draft.py",
+              "ToolTip": "C:\\Users\\Aron Rezene\\Desktop\\ASRC_PyPAW2025\\example_working_stage_ui_draft.py",
+              "RelativeToolTip": "example_working_stage_ui_draft.py",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABMAAAAEAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001001|",
+              "WhenOpened": "2025-07-10T06:26:27.625Z",
               "EditorCaption": ""
             }
           ]

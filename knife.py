@@ -1,6 +1,6 @@
 import matplotlib.pyplot as plt
 import my_powermeter as mpm
-import my_linear as mls
+import my_Linear as mls
 import time
 import datetime
 import save_data

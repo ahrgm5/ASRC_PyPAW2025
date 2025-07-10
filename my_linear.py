@@ -40,10 +40,10 @@ class LinearStage():
 
     def move(self, pos):
         sys.stdout = open(os.devnull, 'w')
-        if pos >= max & pos <= min :
-            position = self.device.set_distance(pos)
-        else:
-            print("Position is out of range")
+        # if pos >= self.max and pos <= self.min :
+        position = self.device.set_distance(pos)
+        # else:
+        #     print("Position is out of range")
         sys.stdout = sys.__stdout__
         self.current_position = position
         return position
